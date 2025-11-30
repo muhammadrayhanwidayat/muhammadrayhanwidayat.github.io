@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>leosycthe — Offensive Security Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta name="description" content="leosycthe — Offensive security student: pentesting, pwn, reverse engineering, CTFs." />
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --muted:#9aa6b2;
+      --accent:#7c5cff;
+      --accent-2:#00e6a8;
+      --glass: rgba(255,255,255,0.02);
+      --card-shadow: 0 6px 18px rgba(2,6,23,0.7);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #081017 100%);color:#e6eef3}
+    a{color:var(--accent)}
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(6,10,14,0.6), rgba(6,10,14,0.35));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));border-radius:10px;font-weight:800;color:#071019}
+    .navlinks{display:flex;gap:14px;align-items:center}
+    .navlinks a{padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;color:var(--muted)}
+    .navlinks a:hover{background:var(--glass);color:#fff}
+    main{padding:36px 0}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:14px;box-shadow:var(--card-shadow);border:1px solid rgba(255,255,255,0.03)}
+    .hero-left h1{font-size:34px;margin:0 0 10px;letter-spacing:-0.02em}
+    .role{color:var(--accent);font-weight:700;margin-bottom:12px}
+    .tagline{color:var(--muted);margin-bottom:18px;line-height:1.5}
+    .cta{display:flex;gap:12px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:#eaf3ff;text-decoration:none;font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#071019;border:none}
+    .hero-right{display:flex;flex-direction:column;gap:12px}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:14px;border-radius:10px;background:rgba(255,255,255,0.01)}
+    .small{font-size:13px;color:var(--muted)}
+    section{margin-top:28px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .skills-list{display:flex;flex-direction:column;gap:8px}
+    .skill{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));border:1px solid rgba(255,255,255,0.02)}
+    .skill svg{opacity:0.9}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .project{padding:16px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));border:1px solid rgba(255,255,255,0.02);min-height:140px;display:flex;flex-direction:column;justify-content:space-between}
+    footer{margin-top:40px;padding:18px 0;color:var(--muted);text-align:center}
+    .links{display:flex;gap:10px;align-items:center}
+    /* code-like box */
+    .codebox{background:#071018;padding:12px;border-radius:8px;font-family:monospace;color:#9bd3ff;font-size:13px}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .grid-3{grid-template-columns:1fr}
+      .navlinks{display:none}
+    }
+    .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo"><img src="kanaderasio1.png" alt="logo" class="logo-img"></div>
+          <div>
+            <div style="font-weight:800">leosycthe</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:2px">Offensive Security · Pwn · Reverse Engineering</div>
+          </div>
+        </div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="hero">
+        <div class="hero-left card">
+          <div class="role">Hello, I'm <span style="color:#fff">leosycthe</span></div>
+          <h1>Information Technology student focused on Offensive Security</h1>
+          <p class="tagline">I explore vulnerabilities in applications & systems, develop exploits, and solve low level security challenges. My work spans penetration testing, binary exploitation (pwn), and reverse engineering.</p>
+          <div class="cta">
+            <!-- <a class="btn primary" href="#projects">See projects</a> -->
+            <a class="btn" href="https://www.linkedin.com/in/muhammad-rayhan-widayat/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://tryhackme.com/p/leosycthe" target="_blank" rel="noopener">TryHackMe</a>
+          </div>
+
+          <section id="about" style="margin-top:18px">
+            <div class="card" style="padding:16px">
+              <h3 style="margin:0 0 8px">About me</h3>
+              <p style="margin:0;color:var(--muted);line-height:1.5">I am an Information Technology student with a primary focus on offensive security. My interests and expertise include penetration testing, binary exploitation (pwn), and reverse engineering. I enjoy exploring vulnerabilities, diving into exploit development, and tackling low-level security challenges. I also have experience in web, network, and database security which helps me approach problems from multiple perspectives.</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="hero-right">
+          <div class="card stat">
+            <div>
+              <div style="font-size:12px;color:var(--muted)">Location</div>
+              <div style="font-weight:700">Indonesia</div>
+            </div>
+            <div class="small">Open to collaborations</div>
+          </div>
+
+          <div class="card">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Quick highlights</div>
+            <div style="display:grid;gap:8px">
+              <div class="small">• Penetration Testing: Web / Network / Android</div>
+              <div class="small">• Binary Exploitation: CTFs & exploit dev</div>
+              <div class="small">• Reverse Engineering: x86/x64</div>
+              <div class="small">• CTF & security research</div>
+            </div>
+          </div>
+
+
+          <!-- masih dalam pengembangan untuk isinya-->
+          <!-- <div class="card codebox">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:6px">Tech stack</div>
+            <div>Tools: Burpsuite, IDA Free, GDB, Genymotion, Nmap, , Burp Suite, Nmap</div>
+          </div> -->
+        </aside>
+      </section>
+
+      <section id="skills" style="margin-top:22px">
+        <div class="card">
+          <h3 style="margin:0 0 12px">Areas of interest & skills</h3>
+          <div class="skills-list">
+            <div class="skill"><strong>Penetration Testing</strong><div style="margin-left:auto;color:var(--muted);font-size:13px">Web · Network · Android</div></div>
+            <div class="skill"><strong>Binary Exploitation</strong><div style="margin-left:auto;color:var(--muted);font-size:13px">CTFs · Exploit development</div></div>
+            <div class="skill"><strong>Reverse Engineering</strong><div style="margin-left:auto;color:var(--muted);font-size:13px">x86 / x64</div></div>
+            <div class="skill"><strong>Security Research & CTFs</strong><div style="margin-left:auto;color:var(--muted);font-size:13px">Challenge design · Writeups</div></div>
+            
+        </div>
+      </section>
+
+
+      <!-- masih dalam pengembangan isinya mau diperbaiki seperti link writeup,ku buka komennya kalau udah jadi halaman writeup dll -->
+      <!-- <section id="projects">
+        <h3 style="margin:10px 0">Projects & selected work</h3>
+        <div class="projects">
+          <article class="project card">
+            <div>
+              <strong>CTF  pwn challenge</strong>
+              <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Designed a binary exploitation challenge for CTF participants — includes heap manipulation and ROP.</p>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <a class="btn" href="#" onclick="alert('Edit project links in the code to point to your repo or writeup')">View repo</a>
+              <a class="btn" href="#" onclick="alert('Add writeup URL')">Writeup</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div>
+              <strong>Web pen-test report</strong>
+              <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Comprehensive assessment covering XSS, SQL injection, auth bypass, and deployment hardening recommendations.</p>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <a class="btn" href="#">View report</a>
+              <a class="btn" href="#">Details</a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div>
+              <strong>Reverse engineering: x86 challenge</strong>
+              <p style="margin:8px 0 0;color:var(--muted);font-size:14px">Reverse-engineered a protected binary to recover algorithm and bypass license check.</p>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:12px">
+              <a class="btn" href="#">Repo</a>
+              <a class="btn" href="#">Writeup</a>
+            </div>
+          </article>
+        </div>
+      </section> -->
+
+      <section id="contact" style="margin-top:20px">
+        <div class="card" style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+          <div>
+            <h3 style="margin:0 0 8px">Contact</h3>
+            <p style="margin:0;color:var(--muted)">Want to collab, hire, or ask about a writeup? Reach out.</p>
+            <div style="margin-top:10px;color:var(--muted);font-size:14px">Email: <a href="mailto:murayat99@gmail.com">murayat99@gmail.com</a></div>
+            <div style="margin-top:6px;color:var(--muted);font-size:14px">LinkedIn: <a href="https://www.linkedin.com/in/muhammad-rayhan-widayat/" target="_blank" rel="noopener">muhammad-rayhan-widayat</a></div>
+          </div>
+
+        <!-- <div style="min-width:260px; margin-left:auto;">
+        <a class="btn primary"
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=murayat99@gmail.com&su=Hello%20Leo&body=Hi,%20I%20want%20to%20collaborate..."
+        target="_blank">
+        Send Message
+        </a>
+        </div> -->
+
+        </div>
+      </section>
+
+      <footer>
+        <div class="links">
+          <div>© <strong>leosycthe</strong> — Offensive Security</div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script>
+    // croll dengan smooth
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+
+    // Aksesibilitas 
+    (function(){
+      function handleFirstTab(e){
+        if(e.key==='Tab') document.body.classList.add('user-is-tabbing');
+      }
+      window.addEventListener('keydown', handleFirstTab);
+    })();
+  </script>
+</body>
+</html>
