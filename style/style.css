@@ -139,3 +139,82 @@ footer{margin-top:40px;padding:18px 0;color:var(--muted);text-align:center}
   text-align: right;
   white-space: nowrap;
 }
+
+
+/* hamburger button (muncul di mobile) */
+.nav-toggle{
+  display:none;
+  background:transparent;
+  border:0;
+  padding:8px;
+  border-radius:8px;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+}
+
+
+.hamburger{ display:inline-block; width:22px; height:18px; position:relative; }
+.hamburger span{
+  position:absolute; left:0; right:0; height:2px;
+  background:var(--text); border-radius:2px;
+  transition: transform .2s ease, top .2s ease, opacity .2s ease;
+}
+.hamburger span:nth-child(1){ top:3px; }
+.hamburger span:nth-child(2){ top:8px; }
+.hamburger span:nth-child(3){ top:13px; }
+
+/* when open -> morph to X */
+.nav-toggle.open .hamburger span:nth-child(1){
+  top:8px; transform: rotate(45deg);
+}
+.nav-toggle.open .hamburger span:nth-child(2){
+  opacity:0;
+}
+.nav-toggle.open .hamburger span:nth-child(3){
+  top:8px; transform: rotate(-45deg);
+}
+
+/* Mobile dropdown nav (hidden by default, shown when .open) */
+@media (max-width:1000px){
+  /* tampilkan tombol */
+  .nav-toggle{ display:flex; }
+
+
+  .navlinks{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:70px;
+    right:28px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:10px;
+    gap:8px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 28px rgba(2,6,23,0.6);
+    min-width:160px;
+    opacity:0;
+    transform: translateY(-6px);
+    pointer-events:none;
+    transition: opacity .18s ease, transform .18s ease;
+    z-index:60;
+  }
+
+
+  .navlinks.open{
+    opacity:1;
+    transform: none;
+    pointer-events:auto;
+  }
+
+
+  .navlinks a{
+    display:block;
+    padding:8px 10px;
+    border-radius:8px;
+    color:var(--text);
+    font-weight:600;
+  }
+  .navlinks a:hover{ background:var(--glass); color:#fff; }
+}

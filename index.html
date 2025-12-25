@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style/style.css">
 
 
+
 </head>
 <body>
   <header>
@@ -21,7 +22,17 @@
             <div style="font-size:12px;color:var(--muted);margin-top:2px">Offensive Security · Web · Pwn · Reverse Engineering</div>
           </div>
         </div>
-        <div class="navlinks">
+
+
+
+          <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+             <span class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        <div id="navlinks" class="navlinks">
           <a href="/" class="active">Home</a>
           <a href="project.html">Projects</a>
           <a href="writeup.html">Writeups</a>
@@ -180,5 +191,6 @@
       window.addEventListener('keydown', handleFirstTab);
     })();
   </script>
+  <script src="script.js"></script>
 </body>
 </html>
