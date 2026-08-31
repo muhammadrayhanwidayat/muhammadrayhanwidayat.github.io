@@ -27,11 +27,11 @@
   if (!el) return;
 
   const texts = [
-    'Penetration Testing',
-    'Binary Exploitation',
-    'Reverse Engineering',
     'Detection Engineering',
-    'CTF Competition',
+    'Threat Hunting',
+    'SIEM Rule Development',
+    'Incident Response',
+    'Malware Analysis',
   ];
 
   let ti = 0, ci = 0, deleting = false;
